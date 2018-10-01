@@ -1,0 +1,21 @@
+<div ng-controller="CertificateStatus as cS">
+<div ng-init="cS.init()">
+<div class="row" >
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<form name="myForm" ng-submit="cS.getCertificateStatus(bank,alias)">
+				
+					<fieldset class="form-group">
+						<label>Serijski broj</label>
+						<input type="text" class="control-form" placeholder="Unesite serijski broj" ng-model="alias"/>
+					</fieldset>
+						<input  type="submit" class="btn btn-lg btn-primary btn-block pull-right" value="Generate" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

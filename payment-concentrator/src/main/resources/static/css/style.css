@@ -1,0 +1,45 @@
+.in_line {
+	display : inline-block;
+	vertical-align : top;
+	
+}
+
+.with_background {
+	
+	width : 100%;
+	position : static;
+	background-image : url("../images/footer.png");
+}
+
+h1, h2 , h3{
+	color : #ab8628;
+}
+
+.centered {
+			
+	padding-top: 10px;
+		
+	margin-left : auto;
+		
+	margin-right : auto;
+		
+	width: 200px;
+}
+
+.center {
+	
+	margin : 0 auto;
+	width : 80%;
+	
+}
+
+p {
+	display : block;
+	margin : 0 auto;
+	padding : 30px;
+}
+
+.push {
+	margin : 30px;
+	
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<property name="DEV_HOME" value="./files/Logger/" />
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+
+				[%-5level]%d{yyyy-MM-dd HH:mm:ss} - %msg%n
+			</Pattern>
+		</layout>
+	</appender>
+
+
+	<appender name="FILE_all" class="ch.qos.logback.core.FileAppender">
+		<file>${DEV_HOME}/all.log</file>
+
+
+		<encoder>
+			<Pattern>
+
+				[%-5level]%d{yyyy-MM-dd HH:mm:ss} %logger{36} - %msg%n
+			</Pattern>
+		</encoder>
+
+	</appender>
+	<!-- 
+	<appender name="FILE_warn" class="ch.qos.logback.core.FileAppender">
+		<file>${DEV_HOME}/warn.log</file>
+
+
+		<encoder>
+			<Pattern>
+				[%-5level]%d{yyyy-MM-dd HH:mm:ss} %logger{36} - %msg%n
+			</Pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>DENY</onMatch>
+			<onMismatch>NEUTRAL</onMismatch>
+		</filter>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>DENY</onMatch>
+			<onMismatch>NEUTRAL</onMismatch>
+		</filter>
+
+	</appender>
+
+	<appender name="FILE_info" class="ch.qos.logback.core.FileAppender">
+		<file>${DEV_HOME}/info.log</file>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>WARN</level>
+			<onMatch>DENY</onMatch>
+			<onMismatch>NEUTRAL</onMismatch>
+		</filter>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>DENY</onMatch>
+			<onMismatch>NEUTRAL</onMismatch>
+		</filter>
+		<encoder>
+			<Pattern>
+				[%-5level]%d{yyyy-MM-dd HH:mm:ss} %logger{36} - %msg%n
+			</Pattern>
+		</encoder>
+
+	</appender> -->
+<!-- 
+	<logger name="korenski.controller" level="WARN">
+		<appender-ref ref="FILE_warn" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<logger name="korenski.controller" level="INFO">
+		<appender-ref ref="FILE_info" />
+		<appender-ref ref="STDOUT" />
+	</logger> -->
+
+
+	<logger name="jdbc" level="OFF" />
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE_all" />
+	</root>
+
+</configuration>

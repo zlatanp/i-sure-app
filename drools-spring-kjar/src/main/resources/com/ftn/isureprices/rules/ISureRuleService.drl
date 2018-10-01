@@ -1,0 +1,103 @@
+package com.ftn.isureprices.rules
+
+import com.ftn.model.dto.*;
+
+rule "InternationalTravelInsurance Rule - If price is higher than 500"
+lock-on-active
+    no-loop
+    when
+       $i: InternationalTravelInsuranceDTO($price: getPrice(), $price > 500)
+    then
+       modify ($i) {setPrice($price - 100)}
+    end
+
+rule "InternationalTravelInsurance Rule - If price is higher than 1000"
+lock-on-active
+    no-loop
+    when
+       $i: InternationalTravelInsuranceDTO($price: getPrice(), $price > 1000)
+    then
+       modify ($i) {setPrice($price - 200)}
+    end
+
+rule "InternationalTravelInsurance Rule - Duration higher than 3 days - 10% "
+lock-on-active
+    no-loop
+    when
+       $i: InternationalTravelInsuranceDTO($price: getPrice(), getDurationInDays() > 3)
+    then
+       modify ($i) {setPrice($price * 0.9)}
+    end
+
+rule "InternationalTravelInsurance Rule - Duration higher than 7 days - 20% "
+lock-on-active
+    no-loop
+    when
+       $i: InternationalTravelInsuranceDTO($price: getPrice(), getDurationInDays() > 3)
+    then
+       modify ($i) {setPrice($price * 0.8)}
+    end
+
+rule "InternationalTravelInsurance Rule - Number of people higher than 3 - 15% "
+lock-on-active
+    no-loop
+    when
+       $i: InternationalTravelInsuranceDTO($price: getPrice(), getNumberOfPersons() > 3)
+    then
+       modify ($i) {setPrice($price * 0.85)}
+    end
+
+rule "HomeInsuranceRule - If price is higher than 1000 - 10%"
+lock-on-active
+    no-loop
+    when
+       $i: HomeInsuranceDTO($price: getPrice(), $price > 1000)
+    then
+       modify ($i) {setPrice($price * 0.9)}
+    end
+
+rule "RoadsideAssistanceInsuranceRule"
+lock-on-active
+    no-loop
+    when
+       $i: RoadsideAssistanceInsuranceDTO($price: getPrice(), $price > 100)
+    then
+       modify ($i) {setPrice($price * 0.8)}
+    end
+
+rule "InsurancePolicyDTO total price above 100 get 10%"
+lock-on-active
+    no-loop
+    when
+       $i: InsurancePolicyDTO($price: getTotalPrice(), $price > 100)
+    then
+       modify ($i) {setTotalPrice($price * 0.9)}
+    end
+
+rule "InsurancePolicyDTO more than 3 people get 25%"
+lock-on-active
+    no-loop
+    when
+       $i: InsurancePolicyDTO($price: getTotalPrice(), $numberOfPeople: getInternationalTravelInsurance().getNumberOfPersons(), $numberOfPeople > 3)
+    then
+       modify ($i) {setTotalPrice($price * 0.75)}
+    end
+
+rule "InsurancePolicyDTO more than 15 days get 10%"
+lock-on-active
+    no-loop
+    when
+       $i: InsurancePolicyDTO($price: getTotalPrice(), $duration: getInternationalTravelInsurance().getDurationInDays(), $duration > 15)
+    then
+       modify ($i) {setTotalPrice($price * 0.9)}
+    end
+
+rule "InsurancePolicyDTO more than 30 days get 40%"
+lock-on-active
+    no-loop
+    when
+       $i: InsurancePolicyDTO($price: getTotalPrice(), $duration: getInternationalTravelInsurance().getDurationInDays(), $duration > 30)
+    then
+       modify ($i) {setTotalPrice($price * 0.6)}
+    end
+

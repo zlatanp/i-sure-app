@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- <html>
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+</head>
+<body>
+<h1>SUCCESS!</h1>
+</body>
+</html> -->
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}" ></link>
+</head>
+<body>
+
+	<div class="with_background">
+		<div class = "centered">
+			<div class="in_line">
+				<img src="../static/images/grayLogo.png" th:src="@{/images/grayLogo.png}" />
+			</div>
+			<h1 class="in_line">iSure</h1>
+		</div>
+	</div>		
+	
+	<div class="center" >
+		<div width = "50%" class="in_line">
+			<img width = "100%" src="../static/images/financial_key.png"
+			 th:src="@{/images/financial_key.png}"/>
+		</div>
+		<div class="in_line push"  width = "30%">
+			<p>
+				<div display="block">
+					<img width= "60px" src="../static/images/check.png" th:src="@{/images/check.png}"/>
+				</div>
+				<h2 text-align="center">Payment Completed Successfully!</h2>
+				<h3>Thank you for puchasing our product.<br /> We will email you a receipt confirming your payment shortly.</h3>
+			</p>
+		</div>
+	</div>
+
+</body>
+
+</html>

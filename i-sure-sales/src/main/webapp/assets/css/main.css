@@ -1,0 +1,62 @@
+
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+    
+    #header{
+    }
+
+
+md-checkbox.md-checked.gold .md-icon {
+ background-color: #151dd4;
+}
+	
+	md-slider .md-thumb:after, md-slider .md-track-fill{
+    background-color: #151dd4 !important;
+    border-color: #151dd4 !important;
+}
+md-slider .md-focus-thumb, md-slider .md-focus-ring{
+    background-color: #151dd4;
+}
+
+md-switch.md-checked .md-thumb {
+  background-color: #47d450;
+}
+
+md-switch.md-checked .md-bar {
+  background-color: #151dd4;
+}
+
+.input-adjust{
+	margin-top: -10px;
+}
+
+      
+md-radio-button.md-checked .md-on{
+    background-color: #151dd4;
+}
+
+md-radio-button.md-checked .md-ink-ripple {
+    color: #151dd4;
+}
+
+md-radio-button.md-checked .md-off {
+    border-color: #151dd4;
+}
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+    color: #151dd4;
+    background: #151dd4;
+}
+
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
+    color: #151dd4;
+}
+
+			

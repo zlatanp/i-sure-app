@@ -1,0 +1,75 @@
+<md-step label="Travelers info"
+         md-complete="!vm.dummy.step2.$invalid" ng-click="vm.addTabs()">
+    <md-step-body>
+        <form name="vm.dummy.step2">
+            <md-content class="md-padding">
+                <div ng-if="vm.tabs.length === 0">
+                    YOU NEED TO HAVE AT LEAST ONE TRAVELER, PLEASE GO BACK AND ENTER AGE GROUP.
+                </div>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab ng-repeat="num in vm.tabs" label={{num}}>
+                        <md-content class="md-padding">
+                            <div layout="row" layout-align="center top">
+                                <div flex="nogrow" style="width: 400px">
+                                    <div ng-if="num=='1'" ng-model="vm.stepTwo.data[num-1].carrier"
+                                         ng-init="vm.stepTwo.data[num-1].carrier = true"><h3>Carrier info</h3></div>
+                                    <div ng-if="num!='1'" ng-model="vm.stepTwo.data[num-1].carrier"
+                                         ng-init="vm.stepTwo.data[num-1].carrier = false"><h3>Other travelers info</h3>
+                                    </div>
+                                    <md-input-container class="md-block"><label>Firstname </label> <input type="text"
+                                                                                                          name="firstname"
+                                                                                                          ng-model="vm.stepTwo.data[num-1].firstname"
+                                                                                                          required/>
+                                    </md-input-container>
+                                    <md-input-container class="md-block input-adjust"><label>Lastname</label> <input
+                                            name="lastname"
+                                            ng-model="vm.stepTwo.data[num-1].lastname" required/></md-input-container>
+                                    <md-input-container class="md-block input-adjust"><label>Personal ID (13
+                                        digits)</label> <input type="text" minlength="13" maxlength="13"
+                                                               pattern="^(\d{13})?$" name="personalId"
+                                                               ng-model="vm.stepTwo.data[num-1].personalId" required/>
+                                    </md-input-container>
+                                    <md-input-container class="md-block input-adjust"><label>Passport (9 digits)</label>
+                                        <input name="passport" type="text" minlength="9" maxlength="9"
+                                               pattern="^(\d{9})?$"
+                                               ng-model="vm.stepTwo.data[num-1].passport" required/>
+                                    </md-input-container>
+                                    <md-input-container class="md-block input-adjust"><label>Address</label> <input
+                                            name="address"
+                                            ng-model="vm.stepTwo.data[num-1].address" required/></md-input-container>
+                                    <md-input-container class="md-block input-adjust" style="margin-bottom: 0px;">
+                                        <label>Phone number</label> <input type="text" minlength="10" maxlength="10"
+                                                                           pattern="^(\d{10})?$" name="telephoneNumber"
+                                                                           ng-model="vm.stepTwo.data[num-1].telephoneNumber"/>
+                                    </md-input-container>
+                                    <div ng-if="num=='1'"
+                                         style="width: 100%;">
+                                        <md-input-container style="margin-top: 0px;" class="md-block">
+                                            <label>Email</label> <input type="email" name="email"
+                                                                        ng-model="vm.stepTwo.data[num-1].email"
+                                                                        required/></md-input-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+            <md-step-actions layout="row">
+                <div flex>
+                    <md-button ng-click="vm.moveToPreviousStep()">GO BACK</md-button>
+                </div>
+                <div flex layout="row" layout-align="end top">
+                    <div>
+                        <md-button ng-disabled="vm.dummy.step2.$invalid || vm.tabs.length === 0" ng-click="vm.submitCurrentStep()" class="md-raised md-primary">
+                            PROCEED
+                        </md-button>
+                        <md-tooltip ng-if="vm.dummy.step2.$invalid" md-direction="top">YOU NEED TO ENTER DATA FOR ALL
+                            TRAVELERS
+                        </md-tooltip>
+                    </div>
+                </div>
+            </md-step-actions>
+        </form>
+    </md-step-body>
+</md-step>

@@ -1,0 +1,21 @@
+<md-content style="background: #fdfff6">
+    <md-toolbar>
+        <h2 class="bankNavbar"><span><img src="image/bank.png" height="32" width="32"></span><span>&nbsp;</span>{{bankName}}
+        </h2>
+    </md-toolbar>
+    <div class="col-sm-4 col-sm-offset-4">
+        <md-card style="padding-top: 5%">
+            <img ng-src="{{imagePath}}" class="md-card-image col-sm-offset-5" alt="Washed Out" width="100" height="100">
+            <md-card-title-text style="text-align: center">
+                <span class="md-headline"><b>Payment failed!</b></span>
+            </md-card-title-text>
+            <md-card-content style="text-align: center; font-size: medium">
+                <p>
+                    We attempted to charge to your credit card but it was declined.
+                    Please check your account balance and repeat paying steps.
+                </p>
+            </md-card-content>
+            <img ng-src="{{cardPath}}" class="md-card-image" height="100">
+        </md-card>
+    </div>
+</md-content>

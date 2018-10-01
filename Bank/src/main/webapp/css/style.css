@@ -1,0 +1,32 @@
+.creditCardDiv{
+    background-color: #76a3a7;
+    font-size:medium;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+.cancelButton{
+    background-color: gray;
+    color: #ffffff;
+}
+
+.bankNavbar{
+    padding-left: 10%;
+    font-family: "Slabo 27px", serif;;
+}
+
+.cardBanner{
+    height: 60px;
+    width: 400px;
+    padding-left: 20%;
+}
+
+.amountLabel{
+    color: #3ea721;
+    font-size: medium;
+}
+
+.errorMsg{
+    color: red;
+    font-style: italic;
+}

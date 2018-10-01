@@ -1,0 +1,1 @@
+INSERT INTO `pcc`.`bank`(`code`,`name`,`url`) VALUES ("38131","UniCredit Bank","http://localhost:9020/"), ("38100","Commercial Bank","http://localhost:9020/"), ("69666","American Bank","http://localhost:9020/");

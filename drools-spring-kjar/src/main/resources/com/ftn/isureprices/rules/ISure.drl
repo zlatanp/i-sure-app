@@ -1,0 +1,21 @@
+package com.ftn.isureprices.rules
+
+import com.ftn.model.*;
+
+rule "VeceOd10Onda15"
+lock-on-active
+    no-loop
+    when
+       $i: User(getNumber() > 10)
+    then
+       modify ($i) {setNumber(20)}
+    end
+
+rule "ManjeOd10Onda15"
+lock-on-active
+    no-loop
+    when
+       $i: User(getNumber() < 5)
+    then
+       modify ($i) {setNumber(1)}
+    end

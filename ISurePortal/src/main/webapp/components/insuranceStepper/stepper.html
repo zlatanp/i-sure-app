@@ -1,0 +1,22 @@
+<div layout="row">
+	<md-content flex="nogrow" style="width: 100%; ">
+	<div>
+		<md-card> <md-toolbar>
+		<div class="md-toolbar-tools" style="background-color: #d4b355;">
+			<h2>
+				<md-icon md-svg-icon="md-menu"></md-icon>
+				<span>Get Insurance</span>
+			</h2>
+		</div>
+		</md-toolbar> <md-stepper-card-content class="md-no-padding">
+		<md-steppers md-dynamic-height
+			md-stretch-steppers="always" md-selected="vm.selectedStep">
+			<div ng-include="'components/insuranceStepper/steps/travel.html'"></div>
+			<div ng-include="'components/insuranceStepper/steps/travelersData.html'"></div>
+			<div ng-include="'components/insuranceStepper/steps/home.html'"></div>
+			<div ng-include="'components/insuranceStepper/steps/car.html'"></div>
+			<div ng-include="'components/insuranceStepper/steps/payment.html'"></div>
+		 </md-steppers> </md-stepper-card-content> </md-card>
+	</div>
+	</md-content>
+</div>

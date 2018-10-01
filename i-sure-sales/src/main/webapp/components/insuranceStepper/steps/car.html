@@ -1,0 +1,130 @@
+<md-step label="Car insurance"
+         md-complete="!vm.dummy.step4.$invalid && !vm.stepFour.isSkiped"> <md-step-body>
+    <form name="vm.dummy.step4">
+        <md-content class="md-padding">
+            <div layout="row" layout-align="center top">
+                <div flex="nogrow" style="width: 700px;margin-left: 100px;">
+                    <div layout="row" style="width: 100%;">
+                        <div style="width: 20%; padding-top: 25px;float:left;">
+                            <p>Towing:</p>
+                        </div>
+                        <div style="width: 80%;">
+                            <md-input-container><md-select
+                                            ng-model="vm.stepFour.data.selectedTowing"
+                                            md-selected-text="vm.stepFour.data.selectedTowing.riskName">
+                                        <md-optgroup
+                                                label="Towing">
+                                            <md-option ng-value="towing"
+                                                       ng-repeat="towing in vm.carRisks['Towing']">{{towing.riskName}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select></md-input-container>
+                        </div>
+                    </div>
+
+                    <div layout="row" style="width: 100%;margin-top: -10px;">
+                        <div style="width: 20%; padding-top: 25px;float:left;">
+                            <p>Repair price:</p>
+                        </div>
+                        <div style="width: 80%;">
+                           <md-input-container><md-select
+                                            ng-model="vm.stepFour.data.selectedRepair"
+                                            md-selected-text="vm.stepFour.data.selectedRepair.riskName">
+                                        <md-optgroup
+                                                label="Repair">
+                                            <md-option ng-value="repair"
+                                                       ng-repeat="repair in vm.carRisks['Repair']">{{repair.riskName}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select></md-input-container>
+                        </div>
+                    </div>
+
+                    <div layout="row" style="width: 100%;margin-top: -10px;">
+                        <div style="width: 20%; padding-top: 25px;float:left;">
+                            <p>Hotel accommodation:</p>
+                        </div>
+                        <div style="width: 80%;">
+                             <md-input-container><md-select
+                                         ng-model="vm.stepFour.data.selectedAccommodation"
+                                         md-selected-text="vm.stepFour.data.selectedAccommodation.riskName">
+                                     <md-optgroup
+                                             label="Accommodation">
+                                         <md-option ng-value="accommodation"
+                                                    ng-repeat="accommodation in vm.carRisks['Accommodation']">{{accommodation.riskName}}
+                                         </md-option>
+                                     </md-optgroup>
+                                 </md-select></md-input-container>
+                        </div>
+                    </div>
+
+                    <div layout="row" style="width: 100%;margin-top: -10px;margin-bottom: 15px;">
+                        <div style="width: 20%; padding-top: 25px;float:left;">
+                            <p>Alternative transport:</p>
+                        </div>
+                       <div style="width: 80%;">
+                             <md-input-container><md-select
+                                         ng-model="vm.stepFour.data.selectedTransport"
+                                         md-selected-text="vm.stepFour.data.selectedTransport.riskName">
+                                     <md-optgroup
+                                             label="Transport">
+                                         <md-option ng-value="transport"
+                                                    ng-repeat="transport in vm.carRisks['Transport']">{{transport.riskName}}
+                                         </md-option>
+                                     </md-optgroup>
+                                 </md-select></md-input-container>
+                        </div>
+                    </div>
+
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Owner Firstname</label> <input name="ownerFirstname" ng-model="vm.stepFour.data.ownerFirstname" required/> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Owner Lastname</label> <input name="ownerLastname" ng-model="vm.stepFour.data.ownerLastname" required/> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Personal ID</label> <input type="text" minlength="13" maxlength="13" pattern="^(\d{13})?$" name="personalId" ng-model="vm.stepFour.data.personalId" required/> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Car Brand</label> <input name="carBrand" ng-model="vm.stepFour.data.carBrand" required/> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Car Type</label> <input name="carType" ng-model="vm.stepFour.data.carType" required/> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Year of Manufacture</label> <input type="text" minlength="4" maxlength="4" pattern="^(\d{4})?$" name="yearOfManufacture" ng-model="vm.stepFour.data.yearOfManufacture" required/> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Licence Plate Number</label> <input type="text" minlength="13" maxlength="13" pattern="^(\d{13})?$" name="licencePlateNumber" ng-model="vm.stepFour.data.licencePlateNumber" required/> </md-input-container>
+
+                    <md-input-container class="md-block input-adjust" style="width: 60%;">
+                        <label>Undercarriage Number</label> <input name="undercarriageNumber" ng-model="vm.stepFour.data.undercarriageNumber" required/> </md-input-container>
+
+
+                </div>
+            </div>
+        </md-content>
+        <md-step-actions layout="row">
+            <div flex>
+                <md-button ng-click="vm.moveToPreviousStep()">GO BACK</md-button>
+
+            </div>
+            <div flex layout="row" layout-align="end top">
+                <div>
+                    <md-button type="submit" class="md-primary" ng-click="vm.skip('car')">DON'T WANT IT
+                    </md-button>
+                    <md-tooltip md-direction="top">IF YOU ALREADY HAVE ADDED CAR INSURANCE, THIS WILL EXCLUDE IT.
+                    </md-tooltip>
+                </div>
+                <div>
+                    <md-button type="submit" ng-disabled="vm.dummy.step4.$invalid" class="md-raised md-primary"
+                               ng-click="vm.submitCurrentStep()">ADD TO POLICY AND PROCEED
+                    </md-button>
+                    <md-tooltip ng-if="vm.dummy.step4.$invalid" md-direction="top">IF YOU WANT TO ADD THIS THEN DATA MUST BE VALID
+                    </md-tooltip>
+                </div>
+            </div>
+        </md-step-actions>
+    </form>
+</md-step-body> </md-step>

@@ -1,0 +1,92 @@
+
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+    
+    #header{
+    }
+    
+     .shoppingCart {
+     	float: right;
+    	padding: 5px 30px 0px 0px;
+     }
+    
+	.shoppingCart {
+		text-decoration: none;
+		-webkit-tap-highlight-color: transparent;
+		color: #ab8628;
+		font-size:25px;
+		font-family: garamond;
+		
+	}
+ 	.shoppingCart:hover {
+		color: #ccae3b;
+		font-size:30px;
+	}
+
+	.shoppingCart:active {
+			color: #ccae3b;
+			font-size:30px;
+		}
+
+md-checkbox.md-checked.gold .md-icon {
+ background-color: #d4b355;
+}
+	
+	md-slider .md-thumb:after, md-slider .md-track-fill{
+    background-color: #d4b355 !important;
+    border-color: #d4b355 !important;
+}
+md-slider .md-focus-thumb, md-slider .md-focus-ring{
+    background-color: #d4b355;
+}
+
+md-switch.md-checked .md-thumb {
+  background-color: #d4b355;
+}
+
+md-switch.md-checked .md-bar {
+  background-color: #f0d68f;
+}
+
+.gold-btn{
+	background-color: #d4b355 !important;
+}
+
+.input-adjust{
+	margin-top: -10px;
+}
+
+      
+md-radio-button.md-checked .md-on{
+    background-color: #d4b355;
+}
+
+md-radio-button.md-checked .md-ink-ripple {
+    color: #d4b355;
+}
+
+md-radio-button.md-checked .md-off {
+    border-color: #d4b355;
+}
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+    color: #d4b355;
+    background: #d4b355;
+}
+
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
+    color: #d4b355;
+}
+
+#bottom-div:hover {
+		transform: scale(1.05);
+		cursor: pointer;
+	}
+			

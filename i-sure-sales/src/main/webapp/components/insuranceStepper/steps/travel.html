@@ -1,0 +1,115 @@
+<md-step label="Traveling details" md-complete="!vm.dummy.step1.$invalid">
+    <md-step-body>
+        <form name="vm.dummy.step1">
+            <md-content class="md-padding">
+                <div layout="row" layout-align="center top">
+                    <div flex="nogrow" style="width: 700px;margin-left: 100px;">
+                        <div style="width: 20%; float: left; padding-top: 10px;">
+                            <p>Duration (from/to):</p>
+                        </div>
+                        <div style="width: 80%;">
+                            <div flex-gt-xs style="width: 200px; float: left;margin-right: 20px;margin-left: -10px;">
+                                <md-datepicker ng-model="vm.stepOne.data.fromDate" md-placeholder="Enter date"
+                                               md-min-date="vm.todayDate"
+                                               md-date-filter="vm.isDateValid" required></md-datepicker>
+                            </div>
+                            <div flex-gt-xs style="width: 200px; float: right;">
+                                <md-datepicker ng-model="vm.stepOne.data.toDate" md-placeholder="Enter date"
+                                               md-min-date="vm.stepOne.data.fromDate"
+                                               required></md-datepicker>
+                            </div>
+                        </div>
+
+                        <div layout="row" ng-repeat="age in vm.travelRisks['Age']"
+                             style="padding-top: 0px; width:100%;">
+                            <div style="width: 20%; float: left; padding-top: 25px;">
+                                <label style="font-weight: 100;">{{age.riskName}}:</label>
+                            </div>
+                            <div style="width: 40%;height:50px;">
+                                <md-input-container class="md-block"><label>Number of people</label> <input min="0"
+                                                                                                            max="5"
+                                                                                                            type="number"
+                                                                                                            ng-model="vm.stepOne.data.numberOfPeople[age.riskName]"
+                                                                                                            ng-init="vm.stepOne.data.numberOfPeople[vm.travelRisks['Age'][0].riskName] = 1"/>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div layout="row">
+                            <div style="width: 20%; float: left; padding-top: 25px;">
+                                <p>Play Sport:</p>
+                            </div>
+                            <div style="width: 10%; float: left;">
+                                <md-switch class="" md-no-ink
+                                           aria-label="Switch No Ink" ng-model="vm.playSport">
+                                </md-switch>
+                            </div>
+                            <div ng-if="vm.playSport" layout="row"
+                                 style="width: 70%; float: right;">
+                                <md-input-container><label>Sport</label>
+                                    <md-select
+                                            ng-model="vm.stepOne.data.selectedSport"
+                                            md-selected-text="vm.stepOne.data.selectedSport.riskName">
+                                        <md-optgroup
+                                                label="Sports">
+                                            <md-option ng-value="sport"
+                                                       ng-repeat="sport in vm.travelRisks['Sport']">{{sport.riskName}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div layout style="width: 100%; margin-top: -10px;">
+                            <div style="width: 20%; float: left; padding-top: 25px;">
+                                <p>Regions:</p>
+                            </div>
+                            <div style="width: 50%;">
+                                <md-input-container>
+                                    <md-select ng-model="vm.stepOne.data.selectedRegion"
+                                               md-selected-text="vm.stepOne.data.selectedRegion.riskName">
+                                        <md-optgroup
+                                                label="Regions">
+                                            <md-option ng-value="region"
+                                                       ng-repeat="region in vm.travelRisks['Region']">
+                                                {{region.riskName}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div layout="row" layout style="margin-top: -10px;">
+                            <div style="width: 20%; padding-top: 25px;float:left;">
+                                <p>Amount:</p>
+                            </div>
+                            <div style="width: 80%;">
+                                <md-input-container>
+                                    <md-select
+                                            ng-model="vm.stepOne.data.selectedAmount"
+                                            md-selected-text="vm.stepOne.data.selectedAmount.riskName">
+                                        <md-optgroup
+                                                label="Value">
+                                            <md-option ng-value="amount"
+                                                       ng-repeat="amount in vm.travelRisks['Value']">{{amount.riskName}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-content>
+            <md-step-actions layout="row">
+                <div flex layout="row" layout-align="end top">
+                    <div>
+                        <md-button ng-disabled="vm.dummy.step1.$invalid" ng-click="vm.submitCurrentStep()" class="md-raised md-primary">
+                            PROCEED
+                        </md-button>
+                        <md-tooltip ng-if="vm.dummy.step1.$invalid" md-direction="top">YOU NEED TO ENTER DATE OF TRAVEL</md-tooltip>
+                    </div>
+                </div>
+            </md-step-actions>
+        </form>
+    </md-step-body>
+</md-step>

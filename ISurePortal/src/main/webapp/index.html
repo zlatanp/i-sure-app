@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html ng-app="iSure" ng-controller="indexController as indexVm">
+<head>
+    <title>ISure Portal</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/footer-distributed-with-address-and-phones.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/md-steppers/dist/md-steppers.css">
+    <link rel="stylesheet" href="bower_components/md-steppers/dist/md-steppers.min.css">
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="bower_components/md-steppers/dist/md-steppers.css">
+    <link rel="stylesheet" href="bower_components/ng-notify/src/styles/ng-notify.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/md-steppers/dist/md-steppers.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="iSure.js"></script>
+    <script src="routing.js"></script>
+    <script src="run.js"></script>
+    <script src="components/insuranceStepper/insuranceStepperController.js"></script>
+    <script src="indexController.js"></script>
+    <script src="components/insuranceStepper/insuranceService.js"></script>
+    <script src="bower_components/md-steppers/dist/md-steppers.js"></script>
+    <script src="bower_components/ng-notify/src/scripts/ng-notify.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css"/>
+    <link rel="stylesheet" href="bower_components/toastr/toastr.min.css"/>
+</head>
+<body>
+<div id="header">
+    <a class="shoppingCart" ng-click="indexVm.getInsurance()"><span class="glyphicon glyphicon-shopping-cart"></span>Get it now</a>
+</div>
+ 
+<div style="background-image:url('assets/images/backgroundAll.png');width:100%;height: 70%;background-size: 100% 100%;">
+
+</div>
+<!-- Main -->
+<div ui-view style="background-color: white;"></div>
+<!-- Section -->
+
+<footer class="footer-distributed" style="background-image:url('assets/images/footer.png'); background-repeat: round;">
+
+    <div class="footer-left">
+        <div style="width:100px; height:100px;">
+            <div style="float:left;">
+                <img src="assets/images/grayLogo.png" alt="logo" style="backround-color:transparent; float:left;"></img>
+            </div>
+            <div class="footer-company-name">ISure &copy; 2017</div>
+        </div>
+    </div>
+
+    <div class="footer-center">
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+
+            <p><span>21 Revolution Street,</span> Paris - France,</p>
+
+            <p><span>Manhattan</span> New York - USA</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+
+            <p>+1 555 123456</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+
+            <p><a href="mailto:support@company.com" class="shoppingCart">support@isure.com</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About the company</span>
+           We are the best of the best. Thousands of satisfied costumers are proof of that.
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+
+</footer>
+</body>
+</html>
